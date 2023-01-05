@@ -1,6 +1,6 @@
 import os, shutil
 
-VERSION = 'Community Patch v1.12'
+VERSION = 'Community Patch v1.13'
 COMPATCH_REPOSITORY = 'K:\\EM-CommunityPatch'
 MAINPATH = os.getcwd()
 
