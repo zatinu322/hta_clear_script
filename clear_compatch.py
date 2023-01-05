@@ -1,7 +1,7 @@
 import os, shutil
 
-VERSION = 'Community Patch v1.11'
-COMPATCH_REPOSITORY = 'K:\EM-CommunityPatch'
+VERSION = 'Community Patch v1.12'
+COMPATCH_REPOSITORY = 'K:\\EM-CommunityPatch'
 MAINPATH = os.getcwd()
 
 def remove(files, path):
@@ -38,20 +38,65 @@ def copy(files, path):
 def main():
     print(f'VERSION = {VERSION}')
 
-    mainfiles = ['dbghelp.dll', 'dxrender9.dll', 'fmod.dll', 'hta.exe', 
-                'input_di8.dll', 'memlog.txt', 'mfc71.dll', 'mfc71u.dll', 
-                'msvcp71.dll', 'msvcr71.dll', 'sound.dll']
+    mainfiles = [
+        'dbghelp.dll', 
+        'dxrender9.dll', 
+        'fmod.dll', 
+        'hta.exe', 
+        'input_di8.dll', 
+        'memlog.txt', 
+        'mfc71.dll', 
+        'mfc71u.dll', 
+        'msvcp71.dll', 
+        'msvcr71.dll', 
+        'sound.dll'
+    ]
 
-    compatch_files = ['patcher.exe', 'remaster', 'patch', 'libs']
+    compatch_files = [
+        'commod.exe', 
+        'remaster', 
+        'patch', 
+        'libs'
+    ]
 
-    compatch_trash = ['library.dll', 'library.pdb']
+    compatch_trash = [
+        'library.dll', 
+        'library.pdb'
+    ]
 
-    datafiles = ['beachsets.xml', 'config.cfg', 'config.cfg_', 'datasources.txt', 
-                 'devicecompatible.xml', 'grid.dds', 'gsmed.cfg', 'm3deditor.cfg', 
-                 'mips.dds', 'posteffects.xml', 'prefabgrid.dds', 'truxxconstructor.cfg', 
-                 'weather.xml', 'cursors', 'editor', 'effects', 'env', 'fx', 'gamedata', 
-                 'if', 'maps', 'models', 'music', 'scripts', 'shaders', 'sounds', 
-                 'textures', 'tiles', 'video', 'weathertexs']
+    datafiles = [
+        'beachsets.xml', 
+        'config.cfg', 
+        'config.cfg_', 
+        'datasources.txt', 
+        'devicecompatible.xml', 
+        'grid.dds', 
+        'gsmed.cfg', 
+        'm3deditor.cfg', 
+        'mod_manifest.yaml',
+        'mips.dds', 
+        'posteffects.xml', 
+        'prefabgrid.dds', 
+        'truxxconstructor.cfg', 
+        'weather.xml', 
+        'cursors', 
+        'editor', 
+        'effects', 
+        'env', 
+        'fx', 
+        'gamedata', 
+        'if', 
+        'maps', 
+        'models', 
+        'music', 
+        'scripts', 
+        'shaders', 
+        'sounds', 
+        'textures', 
+        'tiles', 
+        'video', 
+        'weathertexs'
+    ]
 
     datapath = os.path.join(MAINPATH, 'data')
     backuppath = os.path.join(MAINPATH, 'backup')

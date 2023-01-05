@@ -37,16 +37,52 @@ def copy(files, path):
 def main():
     print(f'VERSION = {VERSION}')
 
-    mainfiles = ['dbghelp.dll', 'dxrender9.dll', 'fmod.dll', 'hta.exe', 
-                'input_di8.dll', 'memlog.txt', 'mfc71.dll', 'mfc71u.dll', 
-                'msvcp71.dll', 'msvcr71.dll', 'sound.dll']
+    mainfiles = [
+        'dbghelp.dll', 
+        'dxrender9.dll', 
+        'fmod.dll', 
+        'hta.exe', 
+        'input_di8.dll', 
+        'memlog.txt', 
+        'mfc71.dll', 
+        'mfc71u.dll', 
+        'msvcp71.dll', 
+        'msvcr71.dll', 
+        'sound.dll'
+    ]
 
-    datafiles = ['beachsets.xml', 'config.cfg', 'config.cfg_', 'datasources.txt', 
-                 'devicecompatible.xml', 'grid.dds', 'gsmed.cfg', 'm3deditor.cfg', 
-                 'mips.dds', 'posteffects.xml', 'prefabgrid.dds', 'truxxconstructor.cfg', 
-                 'weather.xml', 'cursors', 'editor', 'effects', 'env', 'fx', 'gamedata', 
-                 'if', 'maps', 'models', 'music', 'scripts', 'shaders', 'sounds', 
-                 'textures', 'tiles', 'video', 'weathertexs']
+    datafiles = [
+        'beachsets.xml', 
+        'config.cfg', 
+        'config.cfg_', 
+        'datasources.txt', 
+        'devicecompatible.xml', 
+        'grid.dds', 
+        'gsmed.cfg', 
+        'm3deditor.cfg', 
+        'mips.dds', 
+        'posteffects.xml', 
+        'prefabgrid.dds', 
+        'truxxconstructor.cfg', 
+        'weather.xml', 
+        'cursors', 
+        'editor', 
+        'effects', 
+        'env', 
+        'fx', 
+        'gamedata', 
+        'if', 
+        'maps', 
+        'models', 
+        'music', 
+        'scripts', 
+        'shaders', 
+        'sounds', 
+        'textures', 
+        'tiles', 
+        'video', 
+        'weathertexs'
+    ]
 
     datapath = os.path.join(MAINPATH, 'data')
     backuppath = os.path.join(MAINPATH, 'backup')
