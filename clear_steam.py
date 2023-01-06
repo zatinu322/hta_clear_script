@@ -1,4 +1,6 @@
-import os, shutil
+import os
+import shutil
+import subprocess
 
 VERSION = 'Steam v1.02'
 MAINPATH = os.getcwd()
@@ -105,7 +107,9 @@ def main():
             print('\nCopying data from backup...\n')
             copy(['data'], backuppath)
 
-            complete = input('\nCOMPLETED')
+            run_game = input('\nWould you like to run \'hta.exe\'? [Y/N]\n')
+            if run_game.lower() == 'y':
+                subprocess.run('hta.exe')
         else:
             print('Error! Data folder not found.')
     else:

@@ -1,4 +1,6 @@
-import os, shutil
+import os
+import shutil
+import subprocess
 
 VERSION = 'Community Patch v1.13'
 COMPATCH_REPOSITORY = 'K:\\EM-CommunityPatch'
@@ -129,7 +131,10 @@ def main():
             print('\nCopying ComPatch files...\n')
             copy(compatch_files, COMPATCH_REPOSITORY)
 
-            complete = input('\nCOMPLETED')
+            run_commod = input('\nWould you like to run \'commod.exe\'? [Y/N]\n')
+            if run_commod.lower() == 'y':
+                subprocess.run('commod.exe')
+
         else:
             print('Error! Data folder not found.')
     else:
