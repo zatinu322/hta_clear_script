@@ -2,8 +2,8 @@ import os
 import shutil
 import subprocess
 
-VERSION = 'Community Patch v1.13'
-COMPATCH_REPOSITORY = 'K:\\EM-CommunityPatch'
+VERSION = 'Community Patch v1.14'
+COMMOD_PATH = 'K:\\DEM Mod Manager 2.0\\commod.exe'
 MAINPATH = os.getcwd()
 
 def remove(files, path):
@@ -54,13 +54,6 @@ def main():
         'sound.dll'
     ]
 
-    compatch_files = [
-        'commod.exe', 
-        'remaster', 
-        'patch', 
-        'libs'
-    ]
-
     compatch_trash = [
         'library.dll', 
         'library.pdb'
@@ -105,16 +98,12 @@ def main():
 
     print(f'\nGame folder: {MAINPATH}')
     print(f'Backup folder: {backuppath}')
-    print(f'Compatch repository folder: {COMPATCH_REPOSITORY}')
 
     if os.path.exists(backuppath):
         if os.path.exists(datapath):
 
             print('\nRemoving files in root...\n')
             remove(mainfiles, MAINPATH)
-
-            print('\nRemoving ComPatch main files...\n')
-            remove(compatch_files, MAINPATH)
 
             print('\nRemoving ComPatch trash...\n')
             remove(compatch_trash, MAINPATH)
@@ -128,17 +117,16 @@ def main():
             print('\nCopying data from backup...\n')
             copy(['data'], backuppath)
 
-            print('\nCopying ComPatch files...\n')
-            copy(compatch_files, COMPATCH_REPOSITORY)
-
             run_commod = input('\nWould you like to run \'commod.exe\'? [Y/N]\n')
             if run_commod.lower() == 'y':
-                subprocess.run('commod.exe')
+                subprocess.Popen([COMMOD_PATH])
 
         else:
             print('Error! Data folder not found.')
+            input()
     else:
         print('Error! Backup folder not found.')
+        input()
 
 if __name__ == '__main__':
     main()
